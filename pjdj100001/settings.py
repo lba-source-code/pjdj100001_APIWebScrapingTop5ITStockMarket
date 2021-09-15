@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #DSSi custom app
+    'dssi_srv_scraper_stockvalue',
 ]
 
 MIDDLEWARE = [
