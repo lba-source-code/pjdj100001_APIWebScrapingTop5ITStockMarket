@@ -44,7 +44,11 @@
 
     <div class="row g-2">
         <div class="col">
-            {{ vr_web_urls_source }}
+            {% for web_url in vr_web_urls_source %}
+            <li class="">
+                <a href="{{ web_url }}" target='_blank'>{{ web_url }}</a>
+            </li>
+            {% endfor %}  
         </div>
     </div>
 

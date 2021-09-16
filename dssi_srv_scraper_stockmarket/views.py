@@ -32,8 +32,10 @@ def srv_scraper_stockmarket(request):
                               'https://www.investing.com/equities/sap-ag',
                               'https://www.investing.com/equities/apple-computer-inc',
                               'https://www.investing.com/equities/uipath']
-        vr_stockvaluelist = []
-        vr_stocknamelist = []
+        vr_soupb = []
+        vr_stockvaluelist   = []
+        vr_stocknamelist    = []
+        df_stockmarkettop5  = pd.DataFrame()
 
         for vr_web_url in vr_web_urls_source:
 
@@ -50,23 +52,28 @@ def srv_scraper_stockmarket(request):
                         vr_message.mt_message_log('span_tag_attr get("class"',f'{span_tag_attr.get("class")}')
                         vr_message.mt_message_log('span_tag_attr string',f'{span_tag_attr.string}')
                         vr_stocknamelist.append(f'{span_tag_attr.string}')
+                        break
                 for span_tag_attr in vr_soupb.find_all("span"):
                     if 'instrument-price_last__KQzyA' in str(span_tag_attr.get("class")):
                         vr_message.mt_message_log('span_tag_attr type',f'{type(span_tag_attr)}')
                         vr_message.mt_message_log('span_tag_attr get("class"',f'{span_tag_attr.get("class")}')
                         vr_message.mt_message_log('span_tag_attr string',f'{span_tag_attr.string}')
                         vr_stockvaluelist.append(f'{span_tag_attr.string}')
+                        break
             else:
                 vr_message_out = vr_message.mt_message_out_error('srv_scraper_stockmarket <strong>requests.get</strong> url source', f'{vr_web_url}')
                 vr_message_out += vr_message.mt_message_out_error('srv_scraper_stockmarket <strong>requests.get</strong> status_code', f'{vr_requests.status_code}')
 
-        df_stockmarkettop5 = pd.DataFrame(list(zip(vr_stocknamelist,vr_stockvaluelist)),columns =['Stock', 'Value'])
-        vr_message.mt_message_log('srv_scraper_stockmarket df_stockmarkettop5',df_stockmarkettop5)
+        vr_dict_of_lists = {'Stock':vr_stocknamelist, 'Value':vr_stockvaluelist}
+        df_stockmarkettop5 = pd.DataFrame(vr_dict_of_lists)
+        df_stockmarkettop5_ind = df_stockmarkettop5.set_index("Stock")
+        vr_message.mt_message_log('srv_scraper_stockmarket df_stockmarkettop5',df_stockmarkettop5_ind)
+        df_stockmarkettop5_ind_html = df_stockmarkettop5_ind.to_html()
+        
 
     except Exception as msg_error:
-        vr_listoftargetvalues = 'None'
         vr_message.mt_message_log_error('srv_scraper_stockmarket',f'{msg_error}')
-        vr_message_out += vr_message.mt_message_out_error('srv_scraper_stockmarket',f'{msg_error}...')
+        vr_message_out = vr_message.mt_message_out_error('srv_scraper_stockmarket',f'{msg_error}...')
 
     context = {
         'title':'DSSi - Stock Market Top 5 Scraper',
@@ -75,7 +82,7 @@ def srv_scraper_stockmarket(request):
         'vr_soupb':f'DSSi msg vr_soupb span_tag_attr string {vr_listoftargetvalues[:450]}...',
         'vr_stocknamelist':vr_stocknamelist,
         'vr_stockvaluelist':vr_stockvaluelist,
-        'df_stockmarkettop5':df_stockmarkettop5.to_html()
+        'df_stockmarkettop5':df_stockmarkettop5_ind_html    
     }
 
     return render(request,'srv_scraper_stockmarket/srv_scraper_stockmarket.html', context)
