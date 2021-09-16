@@ -6,4 +6,4 @@ Virtual environments: venv module python version = 3.8.1
 Packages: Django, requests, BeautifulSoup, pandas
 
 #Technical function:
-Connect to inveting web page (request.get)
+Connect to inveting web page (requests.get)
