@@ -45,10 +45,12 @@ def srv_scraper_stockmarket(request):
 
         for vr_web_url in vr_web_urls_source:
 
+            #requests get content
             vr_requests = requests.get(vr_web_url)
             
             if vr_requests.status_code == 200:
 
+                #extract data
                 vr_soupb = BeautifulSoup(vr_requests.text, 'html.parser')
                 vr_listoftargetvalues = f'{vr_soupb.find_all("span")}'
             
