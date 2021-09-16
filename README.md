@@ -1,4 +1,9 @@
-#pjdj100001_APIWebScrapingTop5ITStockMarket
+#pjdj100001_APIWebScrapingTop5ITStockMarket Scope of Django project Get from from web page investing five stock values, and publish it into a table. 
 
-Scope of Django project
-Get from requests from web page investing five stock values.
+#Architecture 
+Operating system: Windows 10 Pro
+Virtual environments: venv module python version = 3.8.1
+Packages: Django, requests, BeautifulSoup, pandas
+
+#Technical function:
+Connect to inveting web page (request.get)

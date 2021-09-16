@@ -1,52 +1,96 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+<style>
+
+    th,td {
+    font-size: 11pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 1px solid silver;
+    }
+
+    th,td  {
+    padding: 5px;
+    }
+
+    tr:nth-child(even) {
+    background: #E0E0E0;
+    }
+
+    tr:hover {
+    background: silver;
+    cursor: pointer;
+    }    
+</style>
+
 <div class="container-fluid">
     <H1>{{ title }}</H1>
     <hr>
 
     <h4>Msg Output</h4>
 
-    <div class="row">
-        <div class="col g-2">
+    <div class="row g-2">
+        <div class="col">
             <div class="alert alert-info" role="alert">
                 {{ vr_message_out|safe}}
             </div> 
         </div>       
     </div>
 
-    <h4>vr_soupb</h4>
+    <hr>
+
+    <h4>vr_web_urls_source</h4>
+
+    <div class="row g-2">
+        <div class="col">
+            {{ vr_web_urls_source }}
+        </div>
+    </div>
 
     <hr>
 
-    <div class="row">
-        <div class="col g-2">
+    <h4>vr_soupb</h4>
+
+    <div class="row g-2">
+        <div class="col">
             {{ vr_soupb }}
         </div>
     </div>
 
-    <h4>vr_stocknamelist</h4>
-
     <hr>
 
-    <div class="row">
-        <div class="col g-2">
+    <h4>vr_stocknamelist</h4>
+
+    <div class="row g-2">
+        <div class="col">
             {{ vr_stocknamelist }}
         </div>
     </div>        
 
+    <hr>
+
     <h4>vr_stockvaluelist</h4>
+
+    <div class="row  g-2">
+        <div class="col">
+            {{ vr_stockvaluelist }}
+        </div>
+    </div>
 
     <hr>
 
-    <div class="row">
-        <div class="col g-2">
-            {{ vr_stockvaluelist }}
+    <h4>df_stockmarkettop5</h4>
+
+    <div class="row  g-2">
+        <div class="col">
+            {{ df_stockmarkettop5|safe }}
         </div>
     </div>    
-
+    
 </div>
 
+<br><br><br><br>
 
 
 
