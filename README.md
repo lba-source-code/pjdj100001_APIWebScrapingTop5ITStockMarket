@@ -10,6 +10,11 @@ Virtual environments: venv module with runtime python version = 3.8.1
 Packages: Django, requests, BeautifulSoup, pandas, matplotlib
 
 # Unit test
+Into the project I have include some examples of unit test. 
+1. test_check_request_status_ok
+2. test_check_request_status_ko
+3. test_check_content_have_stockname
+4. test_check_content_have_stockvalue
 
 # The control flow structure of application is:
 1. Connect to investing web page (requests.get)
