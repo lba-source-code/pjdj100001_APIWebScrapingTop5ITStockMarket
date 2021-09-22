@@ -1,5 +1,5 @@
 # Presentation
-Thanks for stopping by. I would like to share a hands-on experience about a process automation with Django application. I am using some steps of DevOps methodology, like control version with git, and share development in remote repository like github. I am also doing more than one integration each day. 
+Thanks for stopping by. I would like to share a hands-on experience about a process automation with Django application. I am using some steps of DevOps methodology, like control version with git, and share development in remote repository like GitHub. I am also doing more than one integration each day. 
 
 # Scope
 The goal of this automation process project is to get from web page investing five stock values, and publish them into a dataframe table on html template.  
