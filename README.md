@@ -1,8 +1,8 @@
 # Presentation
-Thanks to be here, I would like to share a hands-on experience about a process automation with Django application. I am using some steps of DevOps methodology, like control version with git, share development in remote repository like github, and doing integrations more than one by day.
+Thanks for stopping by. I would like to share a hands-on experience about a process automation with Django application. I am using some steps of DevOps methodology, like control version with git, and share development in remote repository like github. I am also doing more than one integration each day. 
 
 # Scope
-The scope of this project of process automation is to get from web page investing, five stock values, and publish them into a dataframe table on html template. 
+The goal of this automation process project is to get from web page investing five stock values, and publish them into a dataframe table on html template.  
 
 # Architecture 
 Operating system: Windows 10 Pro
@@ -10,7 +10,7 @@ Virtual environments: venv module with runtime python version = 3.8.1
 Packages: Django, requests, BeautifulSoup, pandas, matplotlib
 
 # Unit test
-Into the project I have included some examples of unit test. 
+In the project I have included some examples of unit test. 
 1. test_check_request_status_ok
 2. test_check_request_status_ko
 3. test_check_content_have_stockname
