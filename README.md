@@ -2,7 +2,7 @@
 Thanks to be here, I would like to share a hands-on experience about a process automation with Django application. I am using some steps of DevOps methodology, like control version with git, share development in remote repository like github, and doing integrations more than one by day.
 
 # Scope
-The scope of this project of process automation is get from web page investing, five stock values, and publish them into a dataframe table on html template. 
+The scope of this project of process automation is to get from web page investing, five stock values, and publish them into a dataframe table on html template. 
 
 # Architecture 
 Operating system: Windows 10 Pro
