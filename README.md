@@ -33,9 +33,9 @@ In the project I have included some examples of unit test.
 ## Tag
 #djangodeveloper #pythondeveloper #freelancercolaboration #remotework
 
-## Open to colaborate
+## Open to collaborate
 
-I am always open to join or colaborate in development web app, mobile app, api and rpa services. 
+I am always open to join or collaborate in development web app, mobile app, api and rpa services. 
 
 **Thanks for your time**
 **Luis** :smiley:
